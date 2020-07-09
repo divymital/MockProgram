@@ -1,0 +1,12 @@
+﻿@model SPC.DTO.GraphModel
+
+
+@{
+    var myChart = new Chart(width: 600, height: 400)
+        .AddTitle("Product Sales")
+        //.DataBindTable(dataSource: Model.GraphSource, xField: "salesmanName")
+        .AddSeries("Default",
+                    xValue: Model.data, xField: "salesmanName",
+                    yValues: Model.data, yFields: "Sales")
+        .Write();
+}
